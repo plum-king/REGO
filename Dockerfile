@@ -7,8 +7,8 @@ COPY . /app
 WORKDIR /app
 
 # Install Node.js dependencies defined in '/app/packages.json'
-RUN npm install
 RUN npm -g config set user root
+RUN npm install
 
 FROM bitnami/node:9-prod
 ENV NODE_ENV="production"
