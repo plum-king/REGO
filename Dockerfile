@@ -1,6 +1,5 @@
 FROM bitnami/node:9 as builder
 ENV NODE_ENV="production"
-
 # Copy app's source code to the /app directory
 COPY . /app
 
@@ -9,6 +8,7 @@ WORKDIR /app
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
+RUN npm -g config set user root
 
 FROM bitnami/node:9-prod
 ENV NODE_ENV="production"
