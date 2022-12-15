@@ -23,9 +23,4 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      limits:
-        cpu: 200m
-        memory: 128Mi
-      requests:
-        cpu: 10m
-        memory: 10Mi
+      storage: 20Gi
