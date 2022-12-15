@@ -1,17 +1,11 @@
-FROM bitnami/node:9 as builder
-ENV NODE_ENV="production"
-# Copy app's source code to the /app directory
-COPY . /app
-# The application's directory will be the working directory
+FROM node:16.13.1
+RUN apt-get update && mkdir -p /app
+COPY package*.json /app
 WORKDIR /app
-# Install Node.js dependencies defined in '/app/packages.json'
 RUN npm -g config set user root
 RUN npm install
-FROM bitnami/node:9-prod
-ENV NODE_ENV="production"
-COPY --from=builder /app /app
-WORKDIR /app
+COPY app.js /app
+COPY . /app
 ENV PORT 3000
 EXPOSE 3000
-# Start the application
 CMD ["npm", "start"]
