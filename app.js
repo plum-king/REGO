@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const ejs = require("ejs");
-const multer = require("multer");
 
 const port = 3000;
 
