@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: mysql-config
 data:
-  host: 127.0.0.1
+  host: 34.64.116.135
   port: 3306
   database: rego
   user: jisoo
